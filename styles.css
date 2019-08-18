@@ -1,0 +1,502 @@
+body{
+    text-align: center;
+    background-color: #000;
+  }
+
+h1,h2{
+
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 7.7em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(95deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+.heading{
+  margin: 11%;
+justify-content: center;
+align-items: center;
+height:20vh;
+background-color: #000;
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+
+.dropbtn {
+        background-color: #12e6c8;
+        color: white;
+        padding: 16px;
+        font-size: 10px;
+        border: none;
+      cursor:pointer;
+        outline: none;
+        border: 3px solid #12e6c8;
+        font-size: 2.2rem;
+        font-family: cursive;
+        line-height: 0;
+        font-weight: 0;
+        color:#f5f5c6;
+      /*  text-shadow: 0px 0 #DBEDF3;*/
+        border-radius: 15px;
+        display: inline-block;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        margin: 20px;
+        background-color: #000;
+    }
+
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: #2e282a;
+    }
+
+
+    .dropdown {
+      margin: 0vh;
+      margin-bottom: 20vh;
+        position: relative;
+        display: inline-block;
+    }
+
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #ccc;
+        min-width: 120px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+
+    .dropdown-content a:active {background-color: #ddd}
+
+
+    .show {display:block;}
+
+    html, body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* define a fixed width for the entire menu */
+.navigation {
+  width: 160px;
+}
+
+/* reset our lists to remove bullet points and padding */
+.mainmenu, .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* make ALL links (main and submenu) have padding and background color */
+.mainmenu a {
+  display: block;
+  background-color: #000;
+  text-decoration:none;
+  padding: 5px;
+  color: #b8e4c9;
+
+}
+
+/* add hover behaviour */
+/*.mainmenu a:hover,*/.mainmenu a:active {
+    background-color: #000;
+}
+
+
+/* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  we're changing the submenu's max-height from 0 to 200px;
+*/
+
+/*.mainmenu li:hover .submenu {
+  display: block;
+  max-height: 200px;
+}
+.mainmenu li:active .submenu {
+  display: block;
+  max-height: 200px;
+}*/
+
+
+/*
+  we now overwrite the background-color for .submenu links only.
+  CSS reads down the page, so code at the bottom will overwrite the code at the top.
+*/
+
+.submenu a {
+  background-color: #000;
+}
+
+/* onhover behaviour for links inside .submenu */
+.submenu a:active {
+  background-color: #000;
+}
+
+/* this is the initial state of all submenus.
+  we set it to max-height: 0, and hide the overflowed content.
+*/
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
+  font-size: 200%;
+}
+
+
+/*
+* {
+	 margin: 0;
+	 padding: 0;
+	 box-sizing: border-box;
+	 position: relative;
+	 font-weight: 400;
+	 list-style-type: none;
+	 font-style: normal;
+}
+ a {
+	 color: inherit;
+	 text-decoration: none;
+}
+ nav {
+	 line-height: 1.4;
+	 font-family: "Space Mono", monospace;
+	 background: #1d1f20;
+	 padding: 25px 35px;
+	 width: 300px;
+	 top: calc(50vh - 247px);
+	 left: calc(50vw - 150px);
+
+	 border-radius: 16px;
+	 box-shadow: 0 0 60px -15px black;
+	 transform: scale(0) rotate(360deg);
+	 transition: all 0.75s;
+	 font-size: 18px;
+}
+ nav.menu_active {
+	 transform: scale(1) rotate(0deg);
+}
+ nav > ol > li {
+	 margin: 20px 0;
+	 color: #b5bc67;
+}
+ nav > ol > li:first-of-type {
+	 color: #efc371;
+}
+ nav > ol > li > ol {
+	 margin: 10px 0 0 20px;
+	 border-left: 1px solid #4d4d4c;
+	 color: #ae94c0;
+}
+ nav > ol > li > ol > li {
+	 margin: 7px 0;
+	 padding-left: 20px;
+}
+ nav a:hover {
+	 color: #dd925f;
+}
+ h3 {
+	 font-family: "Roboto Mono", monospace;
+	 font-size: 60px;
+	 color: #cfd8dc;
+	 top: calc(50vh - 40px);
+	 left: calc(50vw - 126px);
+	 cursor: pointer;
+	 transition: all 0.3s;
+}
+ h3:hover {
+	 border-bottom: 6px dotted #cfd8dc;
+	 padding-bottom: 2px;
+	 top: calc(50vh - 50px);
+}
+ p {
+	 font-family: "Roboto Mono", monospace;
+	 float: right;
+	 cursor: pointer;
+	 font-size: 16px;
+	 color: #cfd8dc;
+	 transition: all 0.2s;
+}
+ p:hover {
+	 border-bottom: 2px dotted #cfd8dc;
+	 padding-bottom: 5px;
+}*/
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900');
+
+
+#wrapper{
+  width:100vw;
+  height:100vh;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.my-super-cool-btn{
+  position:relative;
+  text-decoration:none;
+  color:#fff;
+  letter-spacing:1px;
+  font-size:3rem;
+  box-sizing:border-box;
+  font-family:cursive;
+}
+.my-super-cool-btn span{
+  position:relative;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:200px;
+  height:200px;
+}
+.my-super-cool-btn span:before{
+  content:'';
+  width:100%;
+  height:100%;
+  display:block;
+  position:absolute;
+  border-radius:100%;
+  border:7px solid  #12e6c8;
+  box-sizing:border-box;
+  transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
+  box-shadow: 0 30px 85px rgba(0,0,0,0.14), 0 15px 35px rgba(0,0,0,0.14);
+}
+.my-super-cool-btn:active span:before{
+  transform:scale(0.8);
+  box-shadow: 0 20px 55px rgba(0,0,0,0.14), 0 15px 35px rgba(0,0,0,0.14);
+}
+.my-super-cool-btn .dots-container{
+  opacity:0;
+  animation: intro 1.6s;
+  animation-fill-mode: forwards;
+}
+.my-super-cool-btn .dot{
+  width:8px;
+  height:8px;
+  display:block;
+  background-color: #12e6c8;
+  border-radius:100%;
+  position:absolute;
+  transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
+}
+.my-super-cool-btn .dot:nth-child(1){
+  top:50px;
+  left:50px;
+  transform:rotate(-140deg);
+  animation: swag1-out 0.3s;
+  animation-fill-mode: forwards;
+  opacity:0;
+}
+.my-super-cool-btn .dot:nth-child(2){
+  top:50px;
+  right:50px;
+  transform:rotate(140deg);
+  animation: swag2-out 0.3s;
+  animation-fill-mode: forwards;
+  opacity:0;
+}
+.my-super-cool-btn .dot:nth-child(3){
+  bottom:50px;
+  left:50px;
+  transform:rotate(140deg);
+  animation: swag3-out 0.3s;
+  animation-fill-mode: forwards;
+  opacity:0;
+}
+.my-super-cool-btn .dot:nth-child(4){
+  bottom:50px;
+  right:50px;
+  transform:rotate(-140deg);
+  animation: swag4-out 0.3s;
+  animation-fill-mode: forwards;
+  opacity:0;
+}
+.my-super-cool-btn:active .dot:nth-child(1){
+  animation: swag1 0.3s;
+  animation-fill-mode: forwards;
+}
+.my-super-cool-btn:active .dot:nth-child(2){
+  animation: swag2 0.3s;
+  animation-fill-mode: forwards;
+}
+.my-super-cool-btn:active .dot:nth-child(3){
+  animation: swag3 0.3s;
+  animation-fill-mode: forwards;
+}
+.my-super-cool-btn:active .dot:nth-child(4){
+  animation: swag4 0.3s;
+  animation-fill-mode: forwards;
+}
+@keyframes intro {
+   0% {
+     opacity:0;
+  }
+  100% {
+     opacity:1;
+  }
+}
+@keyframes swag1 {
+   0% {
+     top:50px;
+     left:50px;
+     width:8px;
+  }
+  50% {
+    width:30px;
+    opacity:1;
+  }
+  100% {
+     top:20px;
+     left:20px;
+     width:8px;
+     opacity:1;
+  }
+}
+@keyframes swag1-out {
+   0% {
+     top:20px;
+     left:20px;
+     width:8px;
+  }
+  50% {
+     width:30px;
+    opacity:1;
+  }
+  100% {
+     top:50px;
+     left:50px;
+     width:8px;
+    opacity:0;
+  }
+}
+@keyframes swag2 {
+   0% {
+     top:50px;
+     right:50px;
+     width:8px;
+  }
+  50% {
+    width:30px;
+    opacity:1;
+  }
+  100% {
+     top:20px;
+     right:20px;
+     width:8px;
+     opacity:1;
+  }
+}
+@keyframes swag2-out {
+   0% {
+     top:20px;
+     right:20px;
+     width:8px;
+  }
+  50% {
+     width:30px;
+    opacity:1;
+  }
+  100% {
+     top:50px;
+     right:50px;
+     width:8px;
+    opacity:0;
+  }
+}
+@keyframes swag3 {
+   0% {
+     bottom:50px;
+     left:50px;
+     width:8px;
+  }
+  50% {
+    width:30px;
+    opacity:1;
+  }
+  100% {
+     bottom:20px;
+     left:20px;
+     width:8px;
+     opacity:1;
+  }
+}
+@keyframes swag3-out {
+   0% {
+     bottom:20px;
+     left:20px;
+     width:8px;
+  }
+  50% {
+     width:30px;
+    opacity:1;
+  }
+  100% {
+     bottom:50px;
+     left:50px;
+     width:8px;
+    opacity:0;
+  }
+}
+@keyframes swag4 {
+   0% {
+     bottom:50px;
+     right:50px;
+     width:8px;
+  }
+  50% {
+    width:30px;
+    opacity:1;
+  }
+  100% {
+     bottom:20px;
+     right:20px;
+     width:8px;
+     opacity:1;
+  }
+}
+@keyframes swag4-out {
+   0% {
+     bottom:20px;
+     right:20px;
+     width:8px;
+  }
+  50% {
+     width:30px;
+    opacity:1;
+  }
+  100% {
+     bottom:50px;
+     right:50px;
+     width:8px;
+    opacity:0;
+  }
+}
